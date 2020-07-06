@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace prps
 {
@@ -15,9 +17,16 @@ namespace prps
         public Form8()
         {
             InitializeComponent();
-            listBox1.Items.Add("Проспект Ленина, 44");
-            listBox1.Items.Add("Объект2");
-            listBox1.Items.Add("Объект3");
+            string line;
+            StreamReader fs = new StreamReader("object.txt");
+            while ((line = fs.ReadLine()) != null)
+            {
+                ObjectRep objrep = new ObjectRep();
+                string[] splitLine = line.Split('|');
+                objrep.address = splitLine[0];
+                listBox1.Items.Add(objrep.address);
+            }
+            fs.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,6 +38,7 @@ namespace prps
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Types.SelectedIndexObject = Convert.ToString(listBox1.SelectedItem);
             Form form16 = new Form16();
             form16.Show(); // отображаем Form2
             this.Close();

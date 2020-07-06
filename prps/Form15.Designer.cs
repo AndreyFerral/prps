@@ -41,11 +41,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label3);
@@ -77,9 +81,9 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(201, 198);
+            this.textBox5.Location = new System.Drawing.Point(201, 197);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(253, 26);
+            this.textBox5.Size = new System.Drawing.Size(70, 26);
             this.textBox5.TabIndex = 11;
             // 
             // label3
@@ -105,7 +109,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(201, 163);
+            this.textBox3.Location = new System.Drawing.Point(201, 128);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(253, 26);
             this.textBox3.TabIndex = 9;
@@ -113,7 +117,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(201, 129);
+            this.textBox4.Location = new System.Drawing.Point(201, 162);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(253, 26);
             this.textBox4.TabIndex = 8;
@@ -138,6 +142,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Внести";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -177,6 +182,22 @@
             this.textBox1.Size = new System.Drawing.Size(253, 26);
             this.textBox1.TabIndex = 2;
             // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.Location = new System.Drawing.Point(277, 197);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(70, 26);
+            this.textBox6.TabIndex = 12;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7.Location = new System.Drawing.Point(353, 197);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(101, 26);
+            this.textBox7.TabIndex = 13;
+            // 
             // Form15
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,5 +227,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

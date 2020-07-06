@@ -88,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(11, 52);
+            this.label4.Location = new System.Drawing.Point(18, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 1;
@@ -103,7 +103,6 @@
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox3.Size = new System.Drawing.Size(216, 70);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "Работник1         Работник2";
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
@@ -113,7 +112,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(216, 26);
             this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "Бригада1";
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // Form13

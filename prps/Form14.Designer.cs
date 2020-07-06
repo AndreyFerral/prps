@@ -35,11 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label1);
@@ -48,14 +52,14 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 167);
+            this.groupBox1.Size = new System.Drawing.Size(360, 188);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(277, 125);
+            this.button1.Location = new System.Drawing.Point(277, 148);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 34);
             this.button1.TabIndex = 4;
@@ -66,12 +70,13 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(6, 125);
+            this.button2.Location = new System.Drawing.Point(6, 148);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 34);
             this.button2.TabIndex = 5;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -87,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(11, 52);
+            this.label2.Location = new System.Drawing.Point(18, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 1;
@@ -96,11 +101,10 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(138, 49);
-            this.textBox2.Multiline = true;
+            this.textBox2.Location = new System.Drawing.Point(138, 52);
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(216, 70);
+            this.textBox2.Size = new System.Drawing.Size(216, 26);
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
@@ -110,12 +114,31 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 26);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(138, 84);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox3.Size = new System.Drawing.Size(216, 26);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(138, 116);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox4.Size = new System.Drawing.Size(216, 26);
+            this.textBox4.TabIndex = 7;
             // 
             // Form14
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 184);
+            this.ClientSize = new System.Drawing.Size(384, 207);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form14";
             this.Text = "Изменение бригады";
@@ -135,5 +158,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

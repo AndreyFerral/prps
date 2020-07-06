@@ -81,6 +81,7 @@
             this.groupBox1.Size = new System.Drawing.Size(360, 202);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label4
             // 
@@ -117,7 +118,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(216, 26);
             this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "20.10.2015";
             // 
             // label1
             // 
@@ -146,7 +146,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 26);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Должность1";
             // 
             // textBox1
             // 
@@ -155,7 +154,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 26);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Работник1";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form11

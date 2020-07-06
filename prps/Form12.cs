@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace prps
 {
@@ -32,6 +34,28 @@ namespace prps
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                /*
+                Brigade AdBrig = new Brigade();
+                AdBrig.name = textBox1.Text;
+                AdBrig.workers = new string[3];
+                AdBrig.workers[0] = textBox2.Text;
+                AdBrig.workers[1] = textBox3.Text;
+                AdBrig.workers[2] = textBox4.Text;*/
+
+                StreamWriter streamWriter = File.AppendText("brigade.txt");
+                streamWriter.WriteLine();
+                streamWriter.Write(textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text);
+                streamWriter.Close();
+
+                MessageBox.Show("Данные успешно записаны!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }

@@ -37,6 +37,7 @@ namespace prps
         private void button2_Click(object sender, EventArgs e)
         {
             string line;
+            bool WrongData = true;
             using (StreamReader fs = new StreamReader("injener.txt", Encoding.Unicode))
             {
                 while ((line = fs.ReadLine()) != null)
@@ -49,6 +50,7 @@ namespace prps
                     if (inj.SingIn(textBox1.Text, textBox2.Text)) {
                         Form form2 = new Form2();
                         form2.Show(); this.Hide();
+                        WrongData = false;
                     }
                 }
             }
@@ -64,9 +66,11 @@ namespace prps
                     if (glinj.SingIn(textBox1.Text, textBox2.Text)) {
                         Form form3 = new Form3();
                         form3.Show(); this.Hide();
+                        WrongData = false;
                     }
                 }
             }
+            if (WrongData) MessageBox.Show("Неверное имя пользователя или пароль");
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

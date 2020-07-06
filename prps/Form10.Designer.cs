@@ -37,11 +37,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.button1);
@@ -71,8 +75,9 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(138, 84);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 26);
+            this.textBox3.Size = new System.Drawing.Size(62, 26);
             this.textBox3.TabIndex = 7;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button1
             // 
@@ -94,6 +99,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Нанять";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -130,6 +136,23 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 26);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(206, 84);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(62, 26);
+            this.textBox4.TabIndex = 8;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.Location = new System.Drawing.Point(277, 84);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(77, 26);
+            this.textBox5.TabIndex = 9;
             // 
             // Form10
             // 
@@ -156,5 +179,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

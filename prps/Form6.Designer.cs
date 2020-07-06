@@ -89,6 +89,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "Form6";
             this.Text = "Ведение списка работников";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
 
         }
