@@ -35,17 +35,6 @@ namespace prps
         {
             try
             {
-                /*
-                Workers AdWork = new Workers();
-                AdWork.name = textBox1.Text;
-                AdWork.job = textBox2.Text;
-                AdWork.firstday = new int[3];
-                AdWork.firstday[0] = Convert.ToInt32(textBox3.Text);
-                AdWork.firstday[1] = Convert.ToInt32(textBox4.Text);
-                AdWork.firstday[2] = Convert.ToInt32(textBox5.Text);
-                AdWork.lastday = new int[3]; AdWork.lastday[0] = 0;
-                AdWork.lastday[1] = 0; AdWork.lastday[2] = 0;
-                */
                 StreamWriter streamWriter = File.AppendText("workers.txt");
                 streamWriter.WriteLine();
                 streamWriter.Write(textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text + "|" + textBox5.Text + "|0|0|0");

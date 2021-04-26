@@ -40,14 +40,6 @@ namespace prps
         {
             try
             {
-                /*
-                Brigade AdBrig = new Brigade();
-                AdBrig.name = textBox1.Text;
-                AdBrig.workers = new string[3];
-                AdBrig.workers[0] = textBox2.Text;
-                AdBrig.workers[1] = textBox3.Text;
-                AdBrig.workers[2] = textBox4.Text;*/
-
                 StreamWriter streamWriter = File.AppendText("brigade.txt");
                 streamWriter.WriteLine();
                 streamWriter.Write(textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text);

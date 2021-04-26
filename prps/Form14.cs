@@ -59,48 +59,52 @@ namespace prps
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Brigade> list = new List<Brigade>();
-            string line;
-            StreamReader fs = new StreamReader("brigade.txt");
-
-            while ((line = fs.ReadLine()) != null)
+            try
             {
-                Brigade brig = new Brigade();
-                string[] splitLine = line.Split('|');
-                brig.name = splitLine[0];
-                brig.workers = new string[3]; brig.workers[0] = splitLine[1];
-                brig.workers[1] = splitLine[2]; brig.workers[2] = splitLine[3];
-                list.Add(brig);
-            }
-            fs.Close();
+                List<Brigade> list = new List<Brigade>();
+                string line;
+                StreamReader fs = new StreamReader("brigade.txt");
 
-            foreach (Brigade brig in list)
-            {
-                if (Types.SelectedIndexBrigade == brig.name)
+                while ((line = fs.ReadLine()) != null)
                 {
-                    brig.name = textBox1.Text;
-                    Types.SelectedIndexBrigade = brig.name;
-                    brig.workers[0] = textBox2.Text;
-                    brig.workers[1] = textBox3.Text;
-                    brig.workers[2] = textBox4.Text;
-                    MessageBox.Show("успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
+                    Brigade brig = new Brigade();
+                    string[] splitLine = line.Split('|');
+                    brig.name = splitLine[0];
+                    brig.workers = new string[3]; brig.workers[0] = splitLine[1];
+                    brig.workers[1] = splitLine[2]; brig.workers[2] = splitLine[3];
+                    list.Add(brig);
                 }
-            }
+                fs.Close();
 
-            StreamWriter sw = new StreamWriter("brigade.txt");
-            int i = 0;
-            foreach (Brigade brig in list)
-            {
-                if (i == list.Count - 1)
+                foreach (Brigade brig in list)
                 {
-                    sw.Write(brig.GetData());
-                    continue;
+                    if (Types.SelectedIndexBrigade == brig.name)
+                    {
+                        brig.name = textBox1.Text;
+                        Types.SelectedIndexBrigade = brig.name;
+                        brig.workers[0] = textBox2.Text;
+                        brig.workers[1] = textBox3.Text;
+                        brig.workers[2] = textBox4.Text;
+                        MessageBox.Show("успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
                 }
-                sw.WriteLine(brig.GetData());
-                i++;
+
+                StreamWriter sw = new StreamWriter("brigade.txt");
+                int i = 0;
+                foreach (Brigade brig in list)
+                {
+                    if (i == list.Count - 1)
+                    {
+                        sw.Write(brig.GetData());
+                        continue;
+                    }
+                    sw.WriteLine(brig.GetData());
+                    i++;
+                }
+                sw.Close();
             }
-            sw.Close();
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

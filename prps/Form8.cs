@@ -55,5 +55,12 @@ namespace prps
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form form18 = new Form18();
+            form18.Show(); // отображаем Form2
+            this.Close();
+        }
     }
 }

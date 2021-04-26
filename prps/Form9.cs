@@ -30,52 +30,57 @@ namespace prps
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Workers> list = new List<Workers>();
-            string line;
-            StreamReader fs = new StreamReader("workers.txt");
-
-            while ((line = fs.ReadLine()) != null)
+            try
             {
-                Workers work = new Workers();
-                string[] splitLine = line.Split('|');
-                work.name = splitLine[0];
-                work.job = splitLine[1];
-                work.firstday = new int[3];
-                work.firstday[0] = Convert.ToInt32(splitLine[2]);
-                work.firstday[1] = Convert.ToInt32(splitLine[3]);
-                work.firstday[2] = Convert.ToInt32(splitLine[4]);
-                work.lastday = new int[3];
-                work.lastday[0] = Convert.ToInt32(splitLine[5]);
-                work.lastday[1] = Convert.ToInt32(splitLine[6]);
-                work.lastday[2] = Convert.ToInt32(splitLine[7]);
-                list.Add(work);
-            }
-            fs.Close();
+                List<Workers> list = new List<Workers>();
+                string line;
+                StreamReader fs = new StreamReader("workers.txt");
 
-            foreach (Workers work in list)
-            {
-                if (Types.SelectedIndexWorker == work.name)
+                while ((line = fs.ReadLine()) != null)
                 {
-                    work.lastday[0] = Convert.ToInt32(textBox1.Text);
-                    work.lastday[1] = Convert.ToInt32(textBox2.Text);
-                    work.lastday[2] = Convert.ToInt32(textBox3.Text);
-                    MessageBox.Show("успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
+                    Workers work = new Workers();
+                    string[] splitLine = line.Split('|');
+                    work.name = splitLine[0];
+                    work.job = splitLine[1];
+                    work.firstday = new int[3];
+                    work.firstday[0] = Convert.ToInt32(splitLine[2]);
+                    work.firstday[1] = Convert.ToInt32(splitLine[3]);
+                    work.firstday[2] = Convert.ToInt32(splitLine[4]);
+                    work.lastday = new int[3];
+                    work.lastday[0] = Convert.ToInt32(splitLine[5]);
+                    work.lastday[1] = Convert.ToInt32(splitLine[6]);
+                    work.lastday[2] = Convert.ToInt32(splitLine[7]);
+                    list.Add(work);
                 }
-            }
+                fs.Close();
 
-            StreamWriter sw = new StreamWriter("workers.txt");
-            int i = 0;
-            foreach (Workers work in list)
-            {
-                if (i == list.Count - 1) {
-                    sw.Write(work.GetData());
-                    continue;
+                foreach (Workers work in list)
+                {
+                    if (Types.SelectedIndexWorker == work.name)
+                    {
+                        work.lastday[0] = Convert.ToInt32(textBox1.Text);
+                        work.lastday[1] = Convert.ToInt32(textBox2.Text);
+                        work.lastday[2] = Convert.ToInt32(textBox3.Text);
+                        MessageBox.Show("успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
                 }
-                sw.WriteLine(work.GetData());
-                i++;
+
+                StreamWriter sw = new StreamWriter("workers.txt");
+                int i = 0;
+                foreach (Workers work in list)
+                {
+                    if (i == list.Count - 1)
+                    {
+                        sw.Write(work.GetData());
+                        continue;
+                    }
+                    sw.WriteLine(work.GetData());
+                    i++;
+                }
+                sw.Close();
             }
-            sw.Close();
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

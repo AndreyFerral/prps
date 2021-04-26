@@ -17,7 +17,6 @@ namespace prps
         public Form11()
         {
             InitializeComponent();
-
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
             textBox3.ReadOnly = true;
@@ -54,7 +53,6 @@ namespace prps
                 }
             }
              //MessageBox.Show(Types.SelectedIndex);
-            //Types.SelectedIndex = work.name;
         }
 
         private void button2_Click(object sender, EventArgs e)

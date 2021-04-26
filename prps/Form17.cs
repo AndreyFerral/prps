@@ -28,57 +28,61 @@ namespace prps
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<ObjectRep> list = new List<ObjectRep>();
-            string line;
-            StreamReader fs = new StreamReader("object.txt");
-
-            while ((line = fs.ReadLine()) != null)
+            try
             {
-                ObjectRep obj = new ObjectRep();
-                string[] splitLine = line.Split('|');
-                obj.address = splitLine[0];
-                obj.problem = splitLine[1];
-                obj.cost = Convert.ToInt32(splitLine[2]);
-                obj.brigade = splitLine[3];
-                obj.firstday = new int[3];
-                obj.firstday[0] = Convert.ToInt32(splitLine[4]);
-                obj.firstday[1] = Convert.ToInt32(splitLine[5]);
-                obj.firstday[2] = Convert.ToInt32(splitLine[6]);
-                obj.lastday = new int[3];
-                obj.lastday[0] = Convert.ToInt32(splitLine[7]);
-                obj.lastday[1] = Convert.ToInt32(splitLine[8]);
-                obj.lastday[2] = Convert.ToInt32(splitLine[9]);
-                obj.fixproblem = splitLine[10];
-                list.Add(obj);
-            }
-            fs.Close();
+                List<ObjectRep> list = new List<ObjectRep>();
+                string line;
+                StreamReader fs = new StreamReader("object.txt");
 
-            foreach (ObjectRep obj in list)
-            {
-                if (Types.SelectedIndexObject == obj.address)
+                while ((line = fs.ReadLine()) != null)
                 {
-                    obj.lastday[0] = Convert.ToInt32(textBox1.Text);
-                    obj.lastday[1] = Convert.ToInt32(textBox3.Text);
-                    obj.lastday[2] = Convert.ToInt32(textBox4.Text);
-                    obj.fixproblem = textBox2.Text;
-                    MessageBox.Show("успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
+                    ObjectRep obj = new ObjectRep();
+                    string[] splitLine = line.Split('|');
+                    obj.address = splitLine[0];
+                    obj.problem = splitLine[1];
+                    obj.cost = Convert.ToInt32(splitLine[2]);
+                    obj.brigade = splitLine[3];
+                    obj.firstday = new int[3];
+                    obj.firstday[0] = Convert.ToInt32(splitLine[4]);
+                    obj.firstday[1] = Convert.ToInt32(splitLine[5]);
+                    obj.firstday[2] = Convert.ToInt32(splitLine[6]);
+                    obj.lastday = new int[3];
+                    obj.lastday[0] = Convert.ToInt32(splitLine[7]);
+                    obj.lastday[1] = Convert.ToInt32(splitLine[8]);
+                    obj.lastday[2] = Convert.ToInt32(splitLine[9]);
+                    obj.fixproblem = splitLine[10];
+                    list.Add(obj);
                 }
-            }
+                fs.Close();
 
-            StreamWriter sw = new StreamWriter("object.txt");
-            int i = 0;
-            foreach (ObjectRep obj in list)
-            {
-                if (i == list.Count - 1)
+                foreach (ObjectRep obj in list)
                 {
-                    sw.Write(obj.GetData());
-                    continue;
+                    if (Types.SelectedIndexObject == obj.address)
+                    {
+                        obj.lastday[0] = Convert.ToInt32(textBox1.Text);
+                        obj.lastday[1] = Convert.ToInt32(textBox3.Text);
+                        obj.lastday[2] = Convert.ToInt32(textBox4.Text);
+                        obj.fixproblem = textBox2.Text;
+                        MessageBox.Show("успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
                 }
-                sw.WriteLine(obj.GetData());
-                i++;
+
+                StreamWriter sw = new StreamWriter("object.txt");
+                int i = 0;
+                foreach (ObjectRep obj in list)
+                {
+                    if (i == list.Count - 1)
+                    {
+                        sw.Write(obj.GetData());
+                        continue;
+                    }
+                    sw.WriteLine(obj.GetData());
+                    i++;
+                }
+                sw.Close();
             }
-            sw.Close();
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }
