@@ -40,8 +40,8 @@ namespace prps
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Form form2 = new Form2();
-            form2.Show();
+            Form form19 = new Form19();
+            form19.Show();
             this.Close();
         }
 

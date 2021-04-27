@@ -256,6 +256,7 @@
             this.Controls.Add(this.button2);
             this.Name = "Form16";
             this.Text = "Информация об объекте";
+            this.Load += new System.EventHandler(this.Form16_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -115,5 +115,10 @@ namespace prps
         {
 
         }
+
+        private void Form16_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
