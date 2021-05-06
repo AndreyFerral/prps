@@ -38,6 +38,7 @@ namespace prps
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
                 StreamWriter streamWriter = File.AppendText("brigade.txt");
@@ -48,6 +49,7 @@ namespace prps
                 MessageBox.Show("Данные успешно записаны!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            */
         }
     }
 }

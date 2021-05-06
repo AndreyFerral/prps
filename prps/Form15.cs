@@ -28,6 +28,10 @@ namespace prps
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "1") MessageBox.Show("Успех! Операция произошла успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            if (textBox1.Text == "2") MessageBox.Show("Ошибка! Введены некорректные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            if (textBox1.Text == "3") MessageBox.Show("Ошибка! Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            /*
             try
             {
                 StreamWriter streamWriter = File.AppendText("object.txt");
@@ -38,6 +42,7 @@ namespace prps
                 MessageBox.Show("Данные успешно записаны!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            */
         }
 
         private void Form15_Load(object sender, EventArgs e)

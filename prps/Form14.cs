@@ -31,11 +31,12 @@ namespace prps
                 list.Add(brig);
             }
             fs.Close();
-
+            /*
             foreach (Brigade brig in list)
             {
                 if (Types.SelectedIndexBrigade == brig.name)
                 {
+                   
                     textBox1.Text = brig.name;
                     textBox2.Text = brig.workers[0];
                     textBox3.Text = brig.workers[1];
@@ -43,6 +44,7 @@ namespace prps
                     break;
                 }
             }
+            */
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace prps
                     list.Add(brig);
                 }
                 fs.Close();
-
+                /*
                 foreach (Brigade brig in list)
                 {
                     if (Types.SelectedIndexBrigade == brig.name)
@@ -89,6 +91,7 @@ namespace prps
                         break;
                     }
                 }
+                */
 
                 StreamWriter sw = new StreamWriter("brigade.txt");
                 int i = 0;

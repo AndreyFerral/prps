@@ -30,5 +30,26 @@ namespace prps
             form3.Show();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form form20 = new Form20();
+            form20.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form form21 = new Form21();
+            form21.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form form23 = new Form23();
+            form23.Show();
+            this.Close();
+        }
     }
 }
